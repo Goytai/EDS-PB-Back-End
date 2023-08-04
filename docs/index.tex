@@ -1,0 +1,60 @@
+\documentclass[12pt, openright,	oneside, a4paper, english, french, spanish, brazil]{abntex2}
+
+% ---
+% Pacotes
+% ---
+\usepackage{lmodern}			                    % Usa a fonte Latin Modern
+\usepackage[T1]{fontenc}		                  % Seleção de códigos de fonte.
+\usepackage[utf8]{inputenc}		                % Codificação do documento (conversão automática dos acentos)
+\usepackage{indentfirst}		                  % Indenta o primeiro parágrafo de cada seção.
+\usepackage{color}				                    % Controle das cores
+\usepackage{graphicx}			                    % Inclusão de gráficos
+\usepackage{microtype} 			                  % para melhorias de justificação
+\usepackage[brazilian,hyperpageref]{backref}	% Paginas com as citações na bibl
+\usepackage[alf]{abntex2cite}	                % Citações padrão ABNT
+
+% ----------------------------------------------------------
+% IMPORTES DE CONFIGURAÇÕES
+% ----------------------------------------------------------
+\input{config.tex}
+\input{pages/capa.tex}
+
+% ----------------------------------------------------------
+% DOCUMENTO
+% ----------------------------------------------------------
+
+% ----
+% Início do documento
+% ----
+\begin{document}
+
+% Seleciona o idioma do documento (conforme pacotes do babel)
+\selectlanguage{brazil}
+
+% Retira espaço extra obsoleto entre as frases.
+\frenchspacing
+
+% ----------------------------------------------------------
+% ELEMENTOS PRÉ-TEXTUAIS
+% ----------------------------------------------------------
+% \pretextual
+
+% ---
+% Capa
+% ---
+\imprimircapa
+% ---
+
+% ---
+% Resumo
+% ---
+\input{pages/resumo.tex}
+% ---
+
+% ----------------------------------------------------------
+% ELEMENTOS TEXTUAIS
+% ----------------------------------------------------------
+\textual
+
+
+\end{document}
