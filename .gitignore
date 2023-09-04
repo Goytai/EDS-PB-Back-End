@@ -26,3 +26,6 @@ replay_pid*
 
 # Docs
 docs/_output
+
+# Finder file
+**/.DS_Store
