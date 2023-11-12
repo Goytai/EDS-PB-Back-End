@@ -1,0 +1,83 @@
+\chapter{Entidades}
+
+% User
+\section{Usuário (User)}
+
+\textbf{Descrição:} O usuário é o ator do sistema, ele será o sujeito que poderá gerenciadas a grande
+maioria das entidades.
+
+\textbf{Campos:} id, email, name, created\_at, updated\_at
+
+\textbf{Relacionamento:} Um usuário tem uma agenda (e todos os seus eventos), uma credencial e vários rotinas, hábitos ou objetivos.
+
+% Schedule
+\section{Agenda (Schedule)}
+
+\textbf{Descrição:} A agenda é responsável por registrar o cronograma e organizar os eventos em um calendário.
+
+\textbf{Campos:} id, events
+
+\textbf{Relacionamento:} Um usuário possuí uma agenda, e uma agenda possuí vários eventos
+
+% ScheduleEvent
+\section{\textit{Evento Agendado (ScheduleEvent)}}
+
+\textbf{Descrição:} Evento Agendado é uma classe abstrata que representa qualquer alocação de tempo em uma agenda.
+
+\textbf{Campos:} id, schedule\_id, title, description, status, start\_at, end\_at
+
+\textbf{Relacionamento:} Um evento agendado pertence a uma agenda, podendo ser uma tarefa ou uma interação.
+
+% Task
+\section{Tarefa (Task)}
+
+\textbf{Descrição:} Uma Tarefa é um tipo de evento agendado que irá acontecer apenas uma vez.
+
+\textbf{Campos:} expire\_at
+
+\textbf{Relacionamento:} Uma tarefa é um tipo de evento agendado, portanto pertence a uma agenda.
+
+% Interaction
+\section{Interação (Interaction)}
+
+\textbf{Descrição:} Uma Interação é um tipo de evento agendado que registra as informações referentes a uma repetição de um ciclo.
+
+\textbf{Campos:} cyclo\_id
+
+\textbf{Relacionamento:} Uma tarefa é um tipo de evento agendado, portanto pertence a uma agenda. Ao mesmo tempo, uma interação pertence a um ciclo.
+
+% Cyclo
+\section{Ciclo (Cyclo)}
+
+\textbf{Descrição:} Ciclo é um conjunto de repetição, ou seja, um conjunto de eventos agendados semelhantes. Os ciclos possuem tamanho e progresso mensurados em dias.
+
+\textbf{Campos:} id, routine\_id, interactions, size, progress, period
+
+\textbf{Relacionamento:} Um ciclo possuí várias interações, e pertence a uma rotina.
+
+% Routine
+\section{Rotina (Routine)}
+
+\textbf{Descrição:} Uma rotina é a entidade que possuí ciclos, e eles são a métrica do progresso dessa entidade. Em uma rotina, toda repetição é importante ser realizada.
+
+\textbf{Campos:} id, title, description, cyclos, status, progress, end\_at
+
+\textbf{Relacionamento:} Uma rotina pode ter vários ciclos e pertence a um usuário.
+
+% Objective
+\section{Objetivo (Objetive)}
+
+\textbf{Descrição:} Um objetivo é um tipo de rotina que possuí uma meta muito bem clara.
+
+\textbf{Campos:} id, title, description, cyclos, status, progress, end\_at, progress, magnitude
+
+\textbf{Relacionamento:} Um objetivo pode ter vários ciclos e pertence a um usuário.
+
+% Habit
+\section{Hábito (Habit)}
+
+\textbf{Descrição:} Um hábito é um tipo de rotina onde a frequência de realização de cada repetição é muito importante.
+
+\textbf{Campos:} id, title, description, cyclos, status, progress, end\_at
+
+\textbf{Relacionamento:} Um objetivo pode ter vários ciclos e pertence a um usuário.
